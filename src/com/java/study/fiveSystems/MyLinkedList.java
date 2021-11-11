@@ -33,7 +33,7 @@ public class MyLinkedList<T>{
         } else if(index == 0){
             head.next = newNode;
             head = newNode;
-        } else if (index == size){
+        } else if (index == size - 1){
             tail.next = newNode;
             tail = newNode;
         } else {
@@ -66,6 +66,8 @@ public class MyLinkedList<T>{
     }
 
     public T get(int index){
+        if (isEmpty())
+            throw new NoSuchElementException();
         return findNodeByIndex(index).element;
     }
 
@@ -83,15 +85,17 @@ public class MyLinkedList<T>{
 
     public T remove(int index){
         T removedElement;
-        Node<T> prev = findNodeByIndex(index - 1);
         if (index == 0){
             removedElement = head.element;
             head = head.next;
-        } else if (index == size - 1){
-            tail = prev;
+        } else {
+            Node<T> prev = findNodeByIndex(index - 1);
+            removedElement = prev.next.element;
+            prev.next = prev.next.next;
+            if (index == size - 1) {
+                tail = prev;
+            }
         }
-        removedElement = prev.element;
-        prev.next = prev.next.next;
         size--;
         return removedElement;
     }
