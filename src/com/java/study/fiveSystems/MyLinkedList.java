@@ -105,11 +105,23 @@ public class MyLinkedList<T>{
         size = 0;
     }
 
-    public void print(){
+    /*public void print(){
         Node<T> newNode = head;
         while (newNode != null){
             System.out.println(newNode.element);
             newNode = newNode.next;
         }
+    }*/
+
+    public Object[] toArray(){
+        Object[] result = new Object[size];
+        Node<T> newNode = head;
+        int i = 0;
+        while (newNode != null){
+            result[i] = newNode.element;
+            i++;
+            newNode = newNode.next;
+        }
+        return result;
     }
 }

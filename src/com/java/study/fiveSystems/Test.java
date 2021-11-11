@@ -1,9 +1,8 @@
 package com.java.study.fiveSystems;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
-public class TaskOne {
+public class Test {
 
 
     public boolean areElementsEqualNum(int[] array, int num){
@@ -32,7 +31,7 @@ public class TaskOne {
     }
 
     public static void main(String[] args) {
-        TaskOne test = new TaskOne();
+        Test test = new Test();
         int[] array = new int[]{2, 6, 7, 9, 15, 20};
         int[] array2 = new int[]{-3, 7, 4, 2, 5, 10};
         int num = 21;
@@ -42,19 +41,20 @@ public class TaskOne {
         boolean result2 = test.areElementsEqualNum(array2, num);
         System.out.println(result2);
 
-        /*System.out.println("----------------");
+        System.out.println("----------------");
 
-        MyLinkedList<String> list = new MyLinkedList<>();
-        list.add("2");
-        list.add("3");
-        list.add("8");
-        list.add(1, "4");
+        MyLinkedList<Integer> list = new MyLinkedList<>();
+        list.add(2);
+        list.add(3);
+        list.add(8);
+        list.add(1, 4);
+        list.remove(3);
+        System.out.println(list.getFirst());
+        System.out.println(list.getLast());
+        list.set(2, 5);
+        System.out.println(list.size());
 
-        System.out.println(list.size());
-        System.out.println(list.isEmpty());
-        list.clear();
-        System.out.println(list.size());
-        System.out.println(list.isEmpty());*/
+        System.out.println(Arrays.toString(list.toArray()));
 
     }
     }
